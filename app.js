@@ -6,19 +6,25 @@ const filterOption = document.querySelector(".filter-task");
 
 const nouvelleTache = document.getElementById("newtask");
 const inputForm = document.querySelector(".add-Task");
+const btnQuitAddTask = document.getElementById("quit-add-task");
 
 // LISTENERS
 taskButton.addEventListener("click", addTask);
+
 todoList.addEventListener("click", deleteCheck);
 // filterOption.addEventListener("input", filterTask);
 
 nouvelleTache.addEventListener("click", showInputTaskForm);
 
+btnQuitAddTask.addEventListener("click", function () {
+  inputForm.classList.add("display-none");
+});
+
 // FUNCTIONS
 
 function showInputTaskForm(e) {
   e.preventDefault();
-  inputForm.style.display = "block" ;
+  inputForm.classList.remove("display-none");
 }
 
 function addTask(event) {
