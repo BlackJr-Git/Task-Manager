@@ -161,6 +161,7 @@ form button {
   border-radius: 10px;
 
   padding: 20px;
+  color: var(--sec-text-color);
 }
 
 .completed {
