@@ -31,13 +31,8 @@ function addTask(event) {
   event.preventDefault();
   // Task div
   const taskDiv = document.createElement("div");
-  taskDiv.classList.add("task");
-  //Creer le Li
-  newTask = document.createElement("li");
-  newTask.innerText = taskInput.value;
-  newTask.classList.add("todo-item");
+  taskDiv.classList.add("task-div");
 
-  taskDiv.appendChild(newTask);
   // Button check
   const completedButton = document.createElement("button");
   completedButton.innerHTML = '<ion-icon name="checkmark"></ion-icon>';
@@ -45,6 +40,13 @@ function addTask(event) {
   completedButton.classList.add("complete-btn");
 
   taskDiv.appendChild(completedButton);
+
+  //Creer le Li
+  newTask = document.createElement("li");
+  newTask.innerText = taskInput.value;
+  newTask.classList.add("todo-item");
+
+  taskDiv.appendChild(newTask);
 
   // Button Delete
   const trashButton = document.createElement("button");
