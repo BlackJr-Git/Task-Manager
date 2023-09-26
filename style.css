@@ -47,8 +47,7 @@ body {
 
 .input {
   border-radius: 10px;
-  min-width: 75%;
-  max-width: 400px;
+  max-width: 75%;
 
   height: 50px;
   outline: none;
@@ -225,6 +224,7 @@ footer button {
   flex-direction: column;
   align-items: center;
 
+  max-width: 400px;
 
   /* display: none; */
 }
@@ -243,7 +243,7 @@ footer button {
     align-items: center;
     justify-content: space-between;
     margin: 10px;
-    width: 75 ;
+    width: 75% ;
 }
 
 .add-Task header ion-icon{
