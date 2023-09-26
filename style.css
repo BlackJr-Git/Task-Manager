@@ -159,6 +159,8 @@ form button {
   background-color: var(--main-color);
 
   border-radius: 10px;
+
+  padding: 20px;
 }
 
 .completed {
@@ -167,6 +169,22 @@ form button {
   background-color: var(--sec-color);
 
   border-radius: 10px;
+
+  padding: 20px;
+}
+
+.todo div,
+.completed div{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.todo ion-icon,
+.completed ion-icon{
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .task-resume {
@@ -224,6 +242,7 @@ footer button {
   flex-direction: column;
   align-items: center;
 
+  min-width: 400px;
   max-width: 400px;
 
   /* display: none; */
@@ -235,20 +254,35 @@ footer button {
   outline: none;
   border: none;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
+}
+
+textarea{
+  resize: none;
 }
 
 .add-Task header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px;
+    margin: 10px 0;
     width: 75% ;
 }
 
 .add-Task header ion-icon{
-    font-size: 32px;
+  font-size: 32px;
 }
+
+.add-Task header p{
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.add-Task form input{
+  font-weight: 500;
+  font-size: 18px;
+}
+
 
 .display-none{
     display: none;
