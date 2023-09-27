@@ -8,7 +8,8 @@ const nouvelleTache = document.getElementById("newtask");
 const inputForm = document.querySelector(".add-Task");
 const btnQuitAddTask = document.getElementById("quit-add-task");
 
-const taskCount = document.getElementById("task-count")
+const taskCount = document.getElementById("task-count");
+const FinishedTaskCount = document.getElementById("finished-task-count");
 
 // LISTENERS
 taskButton.addEventListener("click", addTask);
@@ -62,14 +63,11 @@ function addTask(event) {
   todoList.appendChild(taskDiv);
 
   taskInput.value = "";
-  taskCount.innerText = parseInt(taskCount.innerText) + 1 
-
+  taskCount.innerText = parseInt(taskCount.innerText) + 1;
 }
 
 function deleteCheck(e) {
   const item = e.target;
-
-  console.log(item);
   // DELETE TASK
   if (item.classList[0] === "trash-btn") {
     const task = item.parentElement;
@@ -80,14 +78,20 @@ function deleteCheck(e) {
     });
     // task.remove()
     // item.parentElement.remove();
-    taskCount.innerText = parseInt(taskCount.innerText) - 1 
+    if (taskCount.innerText > "0") {
+      taskCount.innerText = parseInt(taskCount.innerText) - 1;
+    }
   }
 
   // COMPLETE TASK
   if (item.classList[0] === "complete-btn") {
     const task = item.parentElement;
     task.classList.toggle("completed-task");
-    taskCount.innerText = parseInt(taskCount.innerText) - 1 
+
+    if (taskCount.innerText > "0") {
+      taskCount.innerText = parseInt(taskCount.innerText) - 1;
+      FinishedTaskCount.innerText = parseInt(FinishedTaskCount.innerText) + 1;
+    }
   }
 }
 
@@ -95,5 +99,3 @@ function filterTask(e) {
   const tasks = todoList.childNodes;
   console.log(tasks);
 }
-
-
