@@ -11,14 +11,15 @@ const btnQuitAddTask = document.getElementById("quit-add-task");
 const taskCount = document.getElementById("task-count");
 const FinishedTaskCount = document.getElementById("finished-task-count");
 
+const taskInfo = document.querySelector(".task-info-input");
+
+
 // LISTENERS
 taskButton.addEventListener("click", addTask);
-
+taskButton.addEventListener('click', addTaskInfo)
 todoList.addEventListener("click", deleteCheck);
 // filterOption.addEventListener("input", filterTask);
-
 nouvelleTache.addEventListener("click", showInputTaskForm);
-
 btnQuitAddTask.addEventListener("click", function () {
   inputForm.classList.add("display-none");
 });
@@ -30,8 +31,13 @@ function showInputTaskForm(e) {
   inputForm.classList.remove("display-none");
 }
 
+function addTaskInfo(){
+  document.createElement('div') 
+}
+
 function addTask(event) {
   event.preventDefault();
+  
   // Task div
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task-div");
@@ -39,29 +45,23 @@ function addTask(event) {
   // Button check
   const completedButton = document.createElement("button");
   completedButton.innerHTML = '<ion-icon name="radio-button-off"></ion-icon>';
-
   completedButton.classList.add("complete-btn");
-
   taskDiv.appendChild(completedButton);
 
   //Creer le Li
   newTask = document.createElement("li");
   newTask.innerText = taskInput.value;
   newTask.classList.add("todo-item");
-
   taskDiv.appendChild(newTask);
 
   // Button Delete
   const trashButton = document.createElement("button");
   trashButton.innerHTML = '<ion-icon name="trash"></ion-icon>';
-
   trashButton.classList.add("trash-btn");
-
   taskDiv.appendChild(trashButton);
 
   // Add Task to TODOLIST
   todoList.appendChild(taskDiv);
-
   taskInput.value = "";
   taskCount.innerText = parseInt(taskCount.innerText) + 1;
 }
@@ -76,12 +76,12 @@ function deleteCheck(e) {
     task.addEventListener("transitionend", function () {
       task.remove();
     });
+
     // task.remove()
     // item.parentElement.remove();
     if (taskCount.innerText > "0" && task.classList[1] === "slide" ) {
       taskCount.innerText = parseInt(taskCount.innerText) - 1;
     }
-
     if (task.classList[1] === "completed-task") {
       FinishedTaskCount.innerText = parseInt(FinishedTaskCount.innerText) - 1;
     }
