@@ -53,7 +53,7 @@ function addTask(event) {
 
   // Button Delete
   const trashButton = document.createElement("button");
-  trashButton.innerHTML = '<ion-icon name="trash">/ion-icon>';
+  trashButton.innerHTML = '<ion-icon name="trash"></ion-icon>';
 
   trashButton.classList.add("trash-btn");
 
@@ -78,8 +78,12 @@ function deleteCheck(e) {
     });
     // task.remove()
     // item.parentElement.remove();
-    if (taskCount.innerText > "0") {
+    if (taskCount.innerText > "0" && task.classList[1] === "slide" ) {
       taskCount.innerText = parseInt(taskCount.innerText) - 1;
+    }
+
+    if (task.classList[1] === "completed-task") {
+      FinishedTaskCount.innerText = parseInt(FinishedTaskCount.innerText) - 1;
     }
   }
 

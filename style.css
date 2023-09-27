@@ -326,6 +326,7 @@ textarea {
 .trash-btn ion-icon,
 .complete-btn ion-icon{
   pointer-events: none;
+  color: var(--sec-text-color);
 }
 
 
