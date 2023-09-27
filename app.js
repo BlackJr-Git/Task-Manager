@@ -8,6 +8,8 @@ const nouvelleTache = document.getElementById("newtask");
 const inputForm = document.querySelector(".add-Task");
 const btnQuitAddTask = document.getElementById("quit-add-task");
 
+const taskCount = document.getElementById("task-count")
+
 // LISTENERS
 taskButton.addEventListener("click", addTask);
 
@@ -60,6 +62,8 @@ function addTask(event) {
   todoList.appendChild(taskDiv);
 
   taskInput.value = "";
+  taskCount.innerText = parseInt(taskCount.innerText) + 1 
+
 }
 
 function deleteCheck(e) {
@@ -76,13 +80,14 @@ function deleteCheck(e) {
     });
     // task.remove()
     // item.parentElement.remove();
+    taskCount.innerText = parseInt(taskCount.innerText) - 1 
   }
 
   // COMPLETE TASK
   if (item.classList[0] === "complete-btn") {
     const task = item.parentElement;
     task.classList.toggle("completed-task");
-    completedButton.innerHTML = '<ion-icon name="checkmark-circle"></ion-icon>';
+    taskCount.innerText = parseInt(taskCount.innerText) - 1 
   }
 }
 
