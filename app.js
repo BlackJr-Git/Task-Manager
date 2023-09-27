@@ -35,7 +35,7 @@ function addTask(event) {
 
   // Button check
   const completedButton = document.createElement("button");
-  completedButton.innerHTML = '<ion-icon name="checkmark"></ion-icon>';
+  completedButton.innerHTML = '<ion-icon name="radio-button-off"></ion-icon>';
 
   completedButton.classList.add("complete-btn");
 
@@ -50,7 +50,7 @@ function addTask(event) {
 
   // Button Delete
   const trashButton = document.createElement("button");
-  trashButton.innerHTML = '<ion-icon name="trash"></ion-icon>';
+  trashButton.innerHTML = '<ion-icon name="trash">/ion-icon>';
 
   trashButton.classList.add("trash-btn");
 
@@ -64,10 +64,12 @@ function addTask(event) {
 
 function deleteCheck(e) {
   const item = e.target;
+
+  console.log(item);
   // DELETE TASK
   if (item.classList[0] === "trash-btn") {
     const task = item.parentElement;
-    task.classList.add("fall");
+    task.classList.add("slide");
 
     task.addEventListener("transitionend", function () {
       task.remove();
@@ -79,7 +81,8 @@ function deleteCheck(e) {
   // COMPLETE TASK
   if (item.classList[0] === "complete-btn") {
     const task = item.parentElement;
-    task.classList.toggle("completed");
+    task.classList.toggle("completed-task");
+    completedButton.innerHTML = '<ion-icon name="checkmark-circle"></ion-icon>';
   }
 }
 
@@ -87,3 +90,5 @@ function filterTask(e) {
   const tasks = todoList.childNodes;
   console.log(tasks);
 }
+
+
