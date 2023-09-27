@@ -245,7 +245,7 @@ footer button {
   min-width: 400px;
   max-width: 400px;
 
-  /* display: none; */
+  display: none;
 }
 
 .Task-info {
