@@ -11,7 +11,9 @@ const btnQuitAddTask = document.getElementById("quit-add-task");
 const taskCount = document.getElementById("task-count");
 const FinishedTaskCount = document.getElementById("finished-task-count");
 
-const taskInfo = document.querySelector(".task-info-input");
+const taskInfoInput = document.querySelector(".task-info-input");
+const taskTitle = document.querySelector(".task-title");
+const taskInfo = document.querySelector(".task-info");
 
 
 // LISTENERS
@@ -32,7 +34,7 @@ function showInputTaskForm(e) {
 }
 
 function addTaskInfo(){
-  document.createElement('div') 
+   
 }
 
 function addTask(event) {
