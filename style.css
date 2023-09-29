@@ -44,6 +44,7 @@ body {
   color: var(--sec-text-color);
   font-size: 24px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .input {
@@ -284,6 +285,10 @@ textarea {
   font-size: 18px;
 }
 
+#quit-add-task{
+  cursor: pointer;
+}
+
 .display-none {
   display: none;
 }
@@ -347,7 +352,6 @@ textarea {
 /* TASK INFO CONTAINER */
 
 .task-info-container{
-
   min-width: 400px;
   max-width: 400px;
   border-radius: 10px;

@@ -15,10 +15,9 @@ const taskInfoInput = document.querySelector(".task-info-input");
 const taskTitle = document.querySelector(".task-title");
 const taskInfo = document.querySelector(".task-info");
 
-
 // LISTENERS
 taskButton.addEventListener("click", addTask);
-taskButton.addEventListener('click', addTaskInfo)
+taskButton.addEventListener("click", addTaskInfo);
 todoList.addEventListener("click", deleteCheck);
 // filterOption.addEventListener("input", filterTask);
 nouvelleTache.addEventListener("click", showInputTaskForm);
@@ -33,13 +32,11 @@ function showInputTaskForm(e) {
   inputForm.classList.remove("display-none");
 }
 
-function addTaskInfo(){
-   
-}
+function addTaskInfo() {}
 
 function addTask(event) {
   event.preventDefault();
-  
+
   // Task div
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task-div");
@@ -62,9 +59,18 @@ function addTask(event) {
   trashButton.classList.add("trash-btn");
   taskDiv.appendChild(trashButton);
 
+  //  Add Task Description
+  const taskDescription = document.createElement("p");
+  taskDescription.innerText = taskInfoInput.value;
+  taskDescription.classList.add('display-none');
+  taskDiv.appendChild(taskDescription);
+
   // Add Task to TODOLIST
   todoList.appendChild(taskDiv);
+
+  // reinitialisation et compte
   taskInput.value = "";
+  taskInfoInput.value = "";
   taskCount.innerText = parseInt(taskCount.innerText) + 1;
 }
 
@@ -81,7 +87,7 @@ function deleteCheck(e) {
 
     // task.remove()
     // item.parentElement.remove();
-    if (taskCount.innerText > "0" && task.classList[1] === "slide" ) {
+    if (taskCount.innerText > "0" && task.classList[1] === "slide") {
       taskCount.innerText = parseInt(taskCount.innerText) - 1;
     }
     if (task.classList[1] === "completed-task") {
